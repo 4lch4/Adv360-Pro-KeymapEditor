@@ -194,8 +194,18 @@ export default {
 
 <template>
   <initialize>
-    <keyboard-picker @select="handleKeyboardSelected" />
 
+    <div class="deprecated">
+      <p>Thank you for visiting the Kinesis Advantage360 Pro Keymap Editor. This tool was deprecated on February 8th 2025 in favor our new real-time keymap editor called Kinesis Clique.</p>
+      <ul>
+        <li>If you would like to continue using GitHub we recommend using Nick Coutsos’s keymap editor: <a href="https://nickcoutsos.github.io/keymap-editor/">https://nickcoutsos.github.io/keymap-editor/.</a></li>
+        <li>If you would prefer to leave GitHub and firmware flashing behind you can perform a one-time firmware update to gain access to Clique. Get started here: <a href="https://kinesis-ergo.com/360p-clique-upgrade/">https://kinesis-ergo.com/360p-clique-upgrade/.</a></li>
+      </ul>
+
+
+    </div>
+    <!-- 
+        <keyboard-picker @select="handleKeyboardSelected" />
     <template v-if="keymap.keyboard">
       <keymap
         :layout="layout"
@@ -246,7 +256,7 @@ export default {
           <spinner v-if="saving" />
         </button>
       </div>
-    </template>
+    </template> -->
     <div class="logoContainer" v-if="macroEdit === null">
       <img :src="getLogo()" alt="Kinesis Corporation" class="logoImg"/>
     </div>
@@ -299,5 +309,10 @@ button[disabled] {
   .logoImg {
     position: relative;
     height: 75px;
+  }
+
+  .deprecated {
+    padding-left: 50px;
+    padding-top: 25px;
   }
 </style>
